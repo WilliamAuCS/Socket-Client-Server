@@ -121,7 +121,7 @@ def control_to_recv(sock_control):
 
 def main(host, port_number):
     # Establish control connection
-    control_chan = start_connection(host, port_number)
+    control_chan = create_connection(host, port_number)
 
     if control_chan:
         # Accept connection
