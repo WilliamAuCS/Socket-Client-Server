@@ -136,7 +136,7 @@ def main(port_num):
             e_port = receive_e_port(client_socket, client_addr[0])
 
             # Connect to the data channel
-            data_chan = connect_to_data_channel(client_addr[0], int(e_port))
+            data_chan = connect_to_channel(client_addr[0], int(e_port))
 
             # Lines after 'ls' command
             next_str = ''
@@ -167,14 +167,14 @@ def main(port_num):
             if 'get' in cmd_client[:4]:
 
                 # Get e_port from client packet
-                e_port = recv_ephemeral_port(client_socket, client_addr[0])
+                e_port = receive_e_port(client_socket, client_addr[0])
 
                 # Connect to channel
-                data_chan = connect_to_data_channel(client_addr[0], int(e_port))
+                data_chan = connect_to_channel(client_addr[0], int(e_port))
                 print("Sending ", file_name)
 
                 # Create file objet
-                file_obj
+                file_obj = None
                 try:
                     file_obj = open(file_name, "rb")
                 except IOError as msg:
@@ -195,7 +195,7 @@ def main(port_num):
                             print("Response Success\n")
                         else:
                             print("Response failed\n")
-                        send(msg, client_socket)
+                        send_data(msg, client_socket)
                     else:
 
                         # Send file to client
@@ -216,7 +216,7 @@ def main(port_num):
                     # Get e_port
                     e_port = receive_client_data(client_socket)
 
-                    data_chan = connect_to_data_channel(client_addr[0], int(e_port))
+                    data_chan = connect_to_channel(client_addr[0], int(e_port))
 
                     data = receive_client_data(data_chan)
 
