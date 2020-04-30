@@ -19,13 +19,13 @@ python client.py localhost 1234
 
 ### Commands:
 
-##### put <filename> : Sends file from client to server
+**put <filename>** : Sends file from client to server
 
-##### get <filename> : Sends file from server to client
+**get <filename> :** Sends file from server to client
 
-##### ls : Returns files within server
+**ls :** Returns files within server
 
-##### quit : Exits program
+**quit :** Exits program
 
 
 ### Note:
