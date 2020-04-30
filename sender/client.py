@@ -77,15 +77,15 @@ def accept_pkt(sock, num_of_bytes):
     accBuff = ''
     # Buffer helper
     helpBuff = ''
-    print ("got here 1")
+
     while len(accBuff) < num_of_bytes:
         # Store bytes in helper buffer
-        print ("got here 2")
+
         helpBuff = sock.recv(num_of_bytes)
-        print ("got here 3")
+
         #In case socket has been closed
         if not helpBuff:
-            break;
+            break
         # Add bytes from helper to buffer
         accBuff += helpBuff
     return accBuff
@@ -186,8 +186,8 @@ def main(host, port_number):
                         print (server_info)
                         print ("tcp connection open for data transfer...")
 
-                        data_channel = create_connection()
-                        eph_port = data.channel.getsocketname()[1]
+                        data_channel = start_connection()
+                        eph_port = data_channel.getsockname()[1]
                         client_send_data(str(eph_port), control_chan)
                         sock_data, ipr = data_channel.accept()
 

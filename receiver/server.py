@@ -208,35 +208,35 @@ def main(port_num):
                             send_data('Server: Could not execute command: ', client_socket)
                             print("Response failed")
                             print("\n")
-                elif 'put' in cmd_client[:4]:
-                    print("Receiving file ", file_name)
+            elif 'put' in cmd_client[:4]:
+                print("Receiving file ", file_name)
 
-                    send_data('Server: ACK, prepare to receive', client_socket)
+                send_data('Server: ACK, prepare to receive', client_socket)
 
-                    # Get e_port
-                    e_port = receive_client_data(client_socket)
+                # Get e_port
+                e_port = receive_client_data(client_socket)
 
-                    data_chan = connect_to_channel(client_addr[0], int(e_port))
+                data_chan = connect_to_channel(client_addr[0], int(e_port))
 
-                    data = receive_client_data(data_chan)
+                data = receive_client_data(data_chan)
 
-                    if data:
+                if data:
 
-                        with open(file_name, 'wb') as file_to_write:
-                            file_to_write.write(data)
-                            send_data('Server: Successfully executed: ', data_chan)
-                            print("Success\n")
+                    with open(file_name, 'wb') as file_to_write:
+                        file_to_write.write(data)
+                        send_data('Server: Successfully executed: ', data_chan)
+                        print("Success\n")
 
-                    else:
-                        print("Command could not be executed")
-                        print("\n")
-                        send_data('Server: Could not execute command: ', data_chan)
-                        print(data)
-                        print("\n")
-
-                    data_chan.close()
                 else:
-                    send_data('Server: Command not found: ', client_socket)
+                    print("Command could not be executed")
+                    print("\n")
+                    send_data('Server: Could not execute command: ', data_chan)
+                    print(data)
+                    print("\n")
+
+                data_chan.close()
+            else:
+                send_data('Server: Command not found: ', client_socket)
 
     client_socket.close()
 
