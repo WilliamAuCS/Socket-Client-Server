@@ -1,6 +1,6 @@
-#About
+# About
 
-###To use:
+### To use:
 
 1. Ensure python is installed on your system
 
@@ -9,7 +9,7 @@
 3. run "python client.py localhost 1234" (matching the server port number) File located [here](/sender)
 
 
-###Commands:
+### Commands:
 
 put <filename> : Sends file from client to server
 
