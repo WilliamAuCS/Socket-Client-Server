@@ -36,6 +36,23 @@ def receive_data(sock, total_bytes):
         receive_buff += help_buff
     return receive_buff
 
+
+def connect_to_channel(serv_address, serv_port):
+
+    try:
+        print("Opening TCP connection for data transfer...")
+
+        # Creating socket for TCP connection
+        connection_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        # Connect to the server
+        connection_sock.connect((serv_address, serv_port))
+        return connection_sock
+
+    except socket.error as msg:
+        print(msg)
+        return connection_sock is None
+
 def send_data(data, sock):
 
     if data:
@@ -59,22 +76,6 @@ def send_data(data, sock):
         return amount_sent
     # If no data was received or null, return 0
     return 0
-
-def connect_to_channel(serv_address, serv_port):
-
-    try:
-        print("Opening TCP connection for data transfer...")
-
-        # Creating socket for TCP connection
-        connection_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-        # Connect to the server
-        connection_sock.connect((serv_address, serv_port))
-        return connection_sock
-
-    except socket.error as msg:
-        print(msg)
-        return connection_sock is None
 
 def receive_client_data(sock):
 
