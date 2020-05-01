@@ -6,13 +6,13 @@
 
 2. run
 ```sh
-python server.py 1234
+python serv.py 1234
 ```
 (or another unused port number) File located [here](/receiver)
 
 3. run
 ```sh
-python client.py localhost 1234
+python cli.py localhost 1234
 ```
 (matching the server port number) File located [here](/sender)
 
