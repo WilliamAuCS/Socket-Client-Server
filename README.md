@@ -38,3 +38,12 @@ python cli.py localhost 1234
 
 You may want to remove "message.txt" from [reciever](/receiver) and "s_mess.txt"
 from [sender](/sender) to be able to text both put and get commands.
+
+For additional information on client/server arguments, type:  
+```sh
+python cli.py -h
+```
+or  
+```sh
+python serv.py -h
+```
