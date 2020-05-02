@@ -1,12 +1,12 @@
-#About
+# About
 
-####Created by:
+#### Created by:
 William Au - WilliamAu@csu.fullerton.edu
 Swagat Buha - buha3210@csuf.fullerton.edu
 Yanjie Shi - yanjieshi@csu.fullerton.edu
 Daniel Pestolesi - danpestolesi@csu.fullerton.edu
 
-###To use:
+### To use:
 
 1. Ensure python is installed on your system
 
@@ -23,7 +23,7 @@ python cli.py localhost 1234
 (matching the server port number) File located [here](/sender)
 
 
-###Commands:
+### Commands:
 
 **put <filename>** : Sends file from client to server
 
@@ -34,7 +34,7 @@ python cli.py localhost 1234
 **quit :** Exits program
 
 
-###Note:
+### Note:
 
 You may want to remove "message.txt" from [reciever](/receiver) and "s_mess.txt"
 from [sender](/sender) to be able to text both put and get commands.
