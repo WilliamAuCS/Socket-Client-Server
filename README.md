@@ -1,10 +1,10 @@
 # About
 
 #### Created by:
-William Au - WilliamAu@csu.fullerton.edu
-Swagat Buha - buha3210@csuf.fullerton.edu
-Yanjie Shi - yanjieshi@csu.fullerton.edu
-Daniel Pestolesi - danpestolesi@csu.fullerton.edu
+William Au - WilliamAu@csu.fullerton.edu  
+Swagat Buha - buha3210@csuf.fullerton.edu  
+Yanjie Shi - yanjieshi@csu.fullerton.edu  
+Daniel Pestolesi - danpestolesi@csu.fullerton.edu  
 
 ### To use:
 
